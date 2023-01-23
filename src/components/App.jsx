@@ -24,18 +24,17 @@ export default class App extends Component {
   }
 
 
-  calcPercent = propName => {
-        const total = this.calcFeedback();
-        if (!total) return 0;
-        const value = this.state[propName];
-        const result = ((value / total) * 100).toFixed(2);
-        return Number(result);
-  };
+  calcPercent = () => {
+    const total = this.calcFeedback();
+    if (!total) return 0;
+    const value = this.state.good;
+    const result = ((value / total) * 100).toFixed(2);
+    return Number(result);
+};
 
   render() {
     const { good, neutral, bad } = this.state;
-    const goodPercent = this.calcPercent('good');
-    console.log(Object.keys(this.state));
+    const total = this.calcFeedback();
 
     return (
       <>
@@ -46,15 +45,15 @@ export default class App extends Component {
           />
         </Section>
         <Section title="Statistics">
-          {!this.totalFeedback ? (
-            <Notification text="There is no feedback" />
+          {!total ? (
+            <Notification text="There is no feedbacks" />
           ) : (
             <Statistics
               good={good}
               neutral={neutral}
               bad={bad}
               total={this.calcFeedback()}
-              positivePercentage={goodPercent}
+              positivePercentage={this.calcPercent()}
             />
           )}
         </Section>
