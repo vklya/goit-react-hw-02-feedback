@@ -1,7 +1,18 @@
 .section {
-    width: 600px;
+    text-align: center;
+
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
 }
 
 .title {
-    color: green;
+    width: 70%;
+    margin: 0 auto;
+    color: #fff;
+    margin-bottom: 12px;
+
+    .section:not(:first-child) & {
+        border-bottom: 1px solid #fff;
+    }
 }

@@ -37,7 +37,16 @@ export default class App extends Component {
     const total = this.calcFeedback();
 
     return (
-      <>
+      <div
+        style={{
+          width: '400px',
+          margin: '30px auto',
+          backgroundColor: '#2d4262',
+          borderRadius: '8px',
+          boxShadow: '0px 0px 8px 6px rgba(199, 199, 199, 1)',
+          padding: '16px 0',
+        }}
+      >
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={Object.keys(this.state)}
@@ -57,7 +66,7 @@ export default class App extends Component {
             />
           )}
         </Section>
-      </>
+      </div>
     );
   }
 }
