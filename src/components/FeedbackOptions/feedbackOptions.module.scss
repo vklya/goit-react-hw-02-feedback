@@ -1,0 +1,12 @@
+.optionsList {
+    display: flex;
+    gap: 30px;
+}
+
+.optionsItem {
+    width: calc(100%/3);
+}
+
+.optionsButton {
+    border: none;
+}
