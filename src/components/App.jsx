@@ -3,6 +3,7 @@ import FeedbackOptions from './FeedbackOptions';
 import Notification from './Notification';
 import Statistics from './Statistics';
 import { Component } from 'react';
+import css from './app.module.scss';
 
 export default class App extends Component {
   state = {
@@ -37,15 +38,7 @@ export default class App extends Component {
     const total = this.calcFeedback();
 
     return (
-      <div
-        style={{
-          width: '400px',
-          margin: '30px auto',
-          backgroundColor: '#2d4262',
-          borderRadius: '8px',
-          boxShadow: '0px 0px 8px 6px rgba(199, 199, 199, 1)',
-          padding: '16px 0',
-        }}
+      <div className={css.div}
       >
         <Section title="Please leave feedback">
           <FeedbackOptions
